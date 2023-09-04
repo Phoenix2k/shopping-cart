@@ -14,6 +14,10 @@ pre-commit:
 
 pre-push:
   commands:
-    test:
-      run: pnpm test
+    e2e:
+      run: pnpm test:e2e
       tags: test
+    unit:
+      run: pnpm test:unit
+      tags: test
+  parallel: true
