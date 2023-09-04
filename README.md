@@ -79,6 +79,36 @@ pnpm build
 
 The build artifacts will be stored in the `dist/` directory.
 
+## i18n
+
+See [Angular Internationalization](https://angular.io/guide/i18n-overview) for more information about translations.
+
+### Extract the source language file
+
+Extract all strings marked for translation to the default [`messages.json`](./src/locales/messages.json) file:
+
+```shell
+pnpm extract:i18n
+```
+
+> Translations are located in the [`src/locales`](./src/locales) folder.
+
+### Supported locales
+
+- English (`en-US`), default locale
+- Finnish (`fi-FI`)
+
+### Build for a specific locale
+
+```shell
+pnpm build --configuration=fi-FI
+```
+
+### Preview a specific locale
+
+```shell
+pnpm dev --configuration=fi-FI
+```
 
 ## Testing
 

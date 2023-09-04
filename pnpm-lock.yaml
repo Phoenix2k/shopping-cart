@@ -39,7 +39,7 @@ dependencies:
 devDependencies:
   '@angular-devkit/build-angular':
     specifier: 16.2.1
-    version: 16.2.1(@angular/compiler-cli@16.2.3)(@types/node@20.5.9)(karma@6.4.2)(tailwindcss@3.3.3)(typescript@5.1.6)
+    version: 16.2.1(@angular/compiler-cli@16.2.3)(@angular/localize@16.2.3)(@types/node@20.5.9)(karma@6.4.2)(tailwindcss@3.3.3)(typescript@5.1.6)
   '@angular-eslint/builder':
     specifier: 16.1.1
     version: 16.1.1(eslint@8.48.0)(typescript@5.1.6)
@@ -64,14 +64,17 @@ devDependencies:
   '@angular/compiler-cli':
     specifier: 16.2.3
     version: 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
+  '@angular/localize':
+    specifier: 16.2.3
+    version: 16.2.3(@angular/compiler-cli@16.2.3)(@angular/compiler@16.2.3)
   '@playwright/test':
-    specifier: ^1.37.1
+    specifier: 1.37.1
     version: 1.37.1
   '@types/jasmine':
     specifier: 4.3.5
     version: 4.3.5
   '@types/node':
-    specifier: ^20.5.9
+    specifier: 20.5.9
     version: 20.5.9
   '@typescript-eslint/eslint-plugin':
     specifier: 6.6.0
@@ -83,7 +86,7 @@ devDependencies:
     specifier: 10.4.15
     version: 10.4.15(postcss@8.4.29)
   dotenv:
-    specifier: ^16.3.1
+    specifier: 16.3.1
     version: 16.3.1
   eslint:
     specifier: 8.48.0
@@ -164,7 +167,7 @@ packages:
       - chokidar
     dev: true
 
-  /@angular-devkit/build-angular@16.2.1(@angular/compiler-cli@16.2.3)(@types/node@20.5.9)(karma@6.4.2)(tailwindcss@3.3.3)(typescript@5.1.6):
+  /@angular-devkit/build-angular@16.2.1(@angular/compiler-cli@16.2.3)(@angular/localize@16.2.3)(@types/node@20.5.9)(karma@6.4.2)(tailwindcss@3.3.3)(typescript@5.1.6):
     resolution: {integrity: sha512-2CkBOk76O8ROys5NUcRBMLdFVPuBfr3oy9omP5nO0aQVA9mWc3TRy/MeqDbr0xcY8LyJBB4B1jEQrkjWaeSDcA==}
     engines: {node: ^16.14.0 || >=18.10.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
     peerDependencies:
@@ -204,6 +207,7 @@ packages:
       '@angular-devkit/build-webpack': 0.1602.1(chokidar@3.5.3)(webpack-dev-server@4.15.1)(webpack@5.88.2)
       '@angular-devkit/core': 16.2.1(chokidar@3.5.3)
       '@angular/compiler-cli': 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
+      '@angular/localize': 16.2.3(@angular/compiler-cli@16.2.3)(@angular/compiler@16.2.3)
       '@babel/core': 7.22.9
       '@babel/generator': 7.22.9
       '@babel/helper-annotate-as-pure': 7.22.5
@@ -544,6 +548,23 @@ packages:
       rxjs: 7.8.1
       tslib: 2.6.2
     dev: false
+
+  /@angular/localize@16.2.3(@angular/compiler-cli@16.2.3)(@angular/compiler@16.2.3):
+    resolution: {integrity: sha512-8dw4Vf3lqwQK4RBzBjYVNNoXlMJAyEF3pREqQo5aWcGTbBOAwM7SQuRQfxM8yjZZaXcKQEv/XJfEym5UVzGaUw==}
+    engines: {node: ^16.14.0 || >=18.10.0}
+    hasBin: true
+    peerDependencies:
+      '@angular/compiler': 16.2.3
+      '@angular/compiler-cli': 16.2.3
+    dependencies:
+      '@angular/compiler': 16.2.3(@angular/core@16.2.3)
+      '@angular/compiler-cli': 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
+      '@babel/core': 7.22.5
+      fast-glob: 3.3.0
+      yargs: 17.7.2
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
 
   /@angular/platform-browser-dynamic@16.2.3(@angular/common@16.2.3)(@angular/compiler@16.2.3)(@angular/core@16.2.3)(@angular/platform-browser@16.2.3):
     resolution: {integrity: sha512-Y3cYob1VGzT1xSMbuLGVxPlyuhv4zshYEo/yy2626YD63DigqYwGzj+gT0JoU1eNuXw2UWp3R67d9F8SC015Jw==}
@@ -3997,8 +4018,8 @@ packages:
       vary: 1.1.2
     dev: true
 
-  /cosmiconfig@8.3.3(typescript@5.1.6):
-    resolution: {integrity: sha512-/VY+0IvFoE47hwgKHu8feeBFIb1Z1mcJFiLrNwaJpLoLa9qwLVquMGMr2OUwQmhpJDtsSQSasg/TMv1imec9xA==}
+  /cosmiconfig@8.3.4(typescript@5.1.6):
+    resolution: {integrity: sha512-SF+2P8+o/PTV05rgsAjDzL4OFdVXAulSfC/L19VaeVT7+tpOOSscCt2QLxDZ+CLxF2WOiq6y1K5asvs8qUJT/Q==}
     engines: {node: '>=14'}
     peerDependencies:
       typescript: '>=4.9.5'
@@ -4845,6 +4866,17 @@ packages:
   /fast-glob@3.2.7:
     resolution: {integrity: sha512-rYGMRwip6lUMvYD3BTScMwT1HtAs2d71SMv66Vrxs0IekGZEjhM0pcMfjQPnknBt2zeCwQMEupiN02ZP4DiT1Q==}
     engines: {node: '>=8'}
+    dependencies:
+      '@nodelib/fs.stat': 2.0.5
+      '@nodelib/fs.walk': 1.2.8
+      glob-parent: 5.1.2
+      merge2: 1.4.1
+      micromatch: 4.0.5
+    dev: true
+
+  /fast-glob@3.3.0:
+    resolution: {integrity: sha512-ChDuvbOypPuNjO8yIDf36x7BlZX1smcUMTTcyoIjycexOxd6DFsKsg21qVBzEmr3G7fUKIRy2/psii+CIUt7FA==}
+    engines: {node: '>=8.6.0'}
     dependencies:
       '@nodelib/fs.stat': 2.0.5
       '@nodelib/fs.walk': 1.2.8
@@ -7545,7 +7577,7 @@ packages:
       postcss: ^7.0.0 || ^8.0.1
       webpack: ^5.0.0
     dependencies:
-      cosmiconfig: 8.3.3(typescript@5.1.6)
+      cosmiconfig: 8.3.4(typescript@5.1.6)
       jiti: 1.19.3
       postcss: 8.4.27
       semver: 7.5.4
@@ -8594,7 +8626,7 @@ packages:
       '@csstools/selector-specificity': 3.0.0(postcss-selector-parser@6.0.13)
       balanced-match: 2.0.0
       colord: 2.9.3
-      cosmiconfig: 8.3.3(typescript@5.1.6)
+      cosmiconfig: 8.3.4(typescript@5.1.6)
       css-functions-list: 3.2.0
       css-tree: 2.3.1
       debug: 4.3.4

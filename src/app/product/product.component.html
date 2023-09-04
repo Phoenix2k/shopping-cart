@@ -6,7 +6,7 @@
   <p>
     <a class="flex items-center m-4" data-testid="back-link" href="/products">
       <span class="material-icons">arrow_back_ios</span>
-      Back to products
+      <span i18n="back-to-products">Back to products</span>
     </a>
   </p>
   <div
@@ -17,6 +17,7 @@
     <img
       alt="Product image"
       class="w-full object-cover lg:object-cover lg:h-48 rounded-2xl"
+      i18n-alt="product-image"
       itemprop="image"
       [src]="product.thumbnail"
     />
@@ -37,5 +38,5 @@
   </div>
 </article>
 <ng-template #elseBlock>
-  <h2>Loading…</h2>
+  <h2 i18n="loading">Loading…</h2>
 </ng-template>
