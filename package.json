@@ -34,17 +34,20 @@
     "karma-jasmine": "5.1.0",
     "karma-jasmine-html-reporter": "2.1.0",
     "prettier": "3.0.3",
+    "stylelint": "15.10.3",
+    "stylelint-config-standard": "^34.0.0",
     "typescript": "5.1.6"
   },
   "name": "shopping-cart",
   "private": true,
   "scripts": {
     "build": "ng build",
+    "lint": "ng lint && stylelint --fix \"**/*.css\"",
+    "lint:fix": "ng lint --fix && stylelint --fix \"**/*.css\"",
     "ng": "ng",
     "start": "ng serve",
     "test": "ng test",
-    "watch": "ng build --watch --configuration development",
-    "lint": "ng lint"
+    "watch": "ng build --watch --configuration development"
   },
   "version": "0.0.0"
 }
