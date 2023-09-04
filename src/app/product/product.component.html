@@ -4,7 +4,7 @@
   itemtype="https://schema.org/Product"
 >
   <p>
-    <a class="flex items-center m-4" href="/products">
+    <a class="flex items-center m-4" data-testid="back-link" href="/products">
       <span class="material-icons">arrow_back_ios</span>
       Back to products
     </a>
@@ -23,17 +23,15 @@
   </div>
   <div class="flex-auto ml-3 justify-evenly p-4">
     <div class="flex flex-wrap">
-      <h2 class="flex-auto text-lg font-medium">
-        {{
-          product.brand + " " + product.title.replace(product.brand + " ", "")
-        }}
+      <h2 class="flex-auto text-lg font-medium" itemprop="name">
+        {{ formatProductTitle(product) }}
       </h2>
     </div>
     <p class="text-gray-500 mt-2">{{ product.description }}</p>
     <div class="flex py-4 text-sm text-gray-500">
       <div class="flex-1 inline-flex items-center">
         <i class="material-icons mr-2" title="Category">category</i>
-        <p class="">{{ product.category }}</p>
+        <p class="">{{ formatProductCategory(product) }}</p>
       </div>
     </div>
   </div>
