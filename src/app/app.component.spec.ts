@@ -1,33 +1,57 @@
-import { TestBed } from '@angular/core/testing';
+import { Location } from '@angular/common';
+import { HttpClient, HttpHandler } from '@angular/common/http';
+import {
+  ComponentFixture,
+  TestBed,
+  fakeAsync,
+  tick,
+} from '@angular/core/testing';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
+
+import { ApiService } from './api.service';
+import { routes } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 describe('AppComponent', () => {
-  beforeEach(() =>
+  let fixture: ComponentFixture<AppComponent>;
+  let location: Location;
+  let router: Router;
+
+  beforeEach(() => {
     TestBed.configureTestingModule({
-      imports: [RouterTestingModule],
-      declarations: [AppComponent],
-    }),
-  );
+      declarations: [AppComponent, ProductListComponent],
+      imports: [RouterTestingModule.withRoutes(routes)],
+      providers: [ApiService, HttpClient, HttpHandler],
+    }).compileComponents();
+    fixture = TestBed.createComponent(AppComponent);
+    location = TestBed.inject(Location);
+    router = TestBed.inject(Router);
+    fixture.detectChanges();
+    router.initialNavigation();
+  });
 
   it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app).toBeTruthy();
   });
 
   it(`should have as title 'shopping-cart'`, () => {
-    const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
     expect(app.title).toEqual('shopping-cart');
   });
 
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
+  it('navigate to "" redirects you to /products', fakeAsync(() => {
+    router.navigate(['']);
+    tick();
+    expect(location.path()).toBe('/products');
+  }));
+
+  it('should render title', fakeAsync(() => {
+    router.navigate(['']);
+    tick();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain(
-      'shopping-cart app is running!',
-    );
-  });
+    expect(compiled.querySelector('h2')?.textContent).toContain('Products');
+  }));
 });
