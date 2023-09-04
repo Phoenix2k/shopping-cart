@@ -20,7 +20,7 @@ Run `pnpm lint` to lint all files in the source folder. Use `pnpm lint:fix` to t
 
 ## Running unit tests
 
-Run `pnpm test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Run `pnpm test` to execute the unit tests via [Karma](https://karma-runner.github.io). If you want to see the results in your browser, use `pnpm test:local`.
 
 ## Running end-to-end tests
 
