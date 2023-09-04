@@ -9,12 +9,12 @@ tmp
 # Dot files
 .*
 
-# Node
-node_modules
-
 # IDEs and editors
 *.launch
 *.sublime-workspace
+
+# Node
+node_modules
 
 # Miscellaneous
 /connect.lock
@@ -24,6 +24,11 @@ node_modules
 # System files
 *.db
 *.log
+
+# Testing
+/playwright-report/
+/playwright/.cache/
+/test-results/
 
 # Exceptions
 !.editorconfig
