@@ -1,12 +1,13 @@
 lockfileVersion: '6.0'
 
+settings:
+  autoInstallPeers: true
+  excludeLinksFromLockfile: false
+
 dependencies:
   '@angular/animations':
     specifier: 16.2.3
     version: 16.2.3(@angular/core@16.2.3)
-  '@angular/common':
-    specifier: 16.2.3
-    version: 16.2.3(@angular/core@16.2.3)(rxjs@7.8.1)
   '@angular/compiler':
     specifier: 16.2.3
     version: 16.2.3(@angular/core@16.2.3)
@@ -57,6 +58,9 @@ devDependencies:
   '@angular/cli':
     specifier: 16.2.1
     version: 16.2.1
+  '@angular/common':
+    specifier: 16.2.3
+    version: 16.2.3(@angular/core@16.2.3)(rxjs@7.8.1)
   '@angular/compiler-cli':
     specifier: 16.2.3
     version: 16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6)
@@ -470,7 +474,6 @@ packages:
       '@angular/core': 16.2.3(rxjs@7.8.1)(zone.js@0.13.1)
       rxjs: 7.8.1
       tslib: 2.6.2
-    dev: false
 
   /@angular/compiler-cli@16.2.3(@angular/compiler@16.2.3)(typescript@5.1.6):
     resolution: {integrity: sha512-4p1tDeeONiq/zceC0T6unXDuqyWiAe7v2Ag7+ewwM9V8BF+YOEpEI/41lxzmbK2U1YUvG3jWfZyw3ertQlMp0Q==}
@@ -9561,7 +9564,3 @@ packages:
     resolution: {integrity: sha512-+bIeDAFEBYuXRuU3qGQvzdPap+N1zjM4KkBAiiQuVVCrHrhjDuY6VkUhNa5+U27+9w0q3fbKiMCbpJ0XzMmSWA==}
     dependencies:
       tslib: 2.6.2
-
-settings:
-  autoInstallPeers: true
-  excludeLinksFromLockfile: false
