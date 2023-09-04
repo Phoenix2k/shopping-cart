@@ -82,19 +82,31 @@ The build artifacts will be stored in the `dist/` directory.
 
 ## Testing
 
+This project contains E2E and unit tests.
+
 ### End-to-end tests
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Run E2E tests using [Playwright](https://playwright.dev/):
+
+```shell
+pnpm test:e2e
+```
+
+The tests are located in the [`e2e`](./e2e/) folder.
+
+> If you want to see the results in your browser, use `pnpm test:e2e:debug`.
 
 ### Unit tests
 
 Run unit tests using [Karma](https://karma-runner.github.io):
 
 ```shell
-pnpm test
+pnpm test:unit
 ```
 
-If you want to see the results in your browser, use `pnpm test:local`.
+The tests are located in the [`src`](./src/) folder.
+
+> If you want to see the results in your browser, use `pnpm test:unit:debug`.
 
 ## Further help
 
