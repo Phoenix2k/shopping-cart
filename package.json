@@ -34,6 +34,7 @@
     "karma-coverage": "2.2.1",
     "karma-jasmine": "5.1.0",
     "karma-jasmine-html-reporter": "2.1.0",
+    "lefthook": "^1.4.10",
     "postcss": "8.4.29",
     "prettier": "3.0.3",
     "stylelint": "15.10.3",

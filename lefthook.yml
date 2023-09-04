@@ -1,0 +1,19 @@
+# Documentation
+# https://github.com/evilmartians/lefthook/blob/master/docs/configuration.md
+
+pre-commit:
+  commands:
+    eslint:
+      glob: "*.{js,ts,jsx,tsx}"
+      run: pnpm eslint {staged_files}
+      tags: lint
+    stylelint:
+      glob: "*.{css}"
+      run: pnpm stylelint {staged_files}
+      tags: lint
+
+pre-push:
+  commands:
+    test:
+      run: pnpm test
+      tags: test
