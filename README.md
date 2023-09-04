@@ -38,7 +38,7 @@ pnpm install
 Start the dev server:
 
 ```shell
-ng serve
+pnpm dev
 ```
 
 Navigate to [`http://localhost:4200/`](http://localhost:4200/) to see the app.

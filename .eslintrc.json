@@ -1,5 +1,7 @@
 {
-  "ignorePatterns": ["dist/**/*"],
+  "ignorePatterns": [
+    "dist/**/*"
+  ],
   "overrides": [
     {
       "extends": [
@@ -9,9 +11,13 @@
         "plugin:@angular-eslint/template/process-inline-templates",
         "plugin:prettier/recommended"
       ],
-      "files": ["*.ts"],
-  "plugins": ["prettier"],
-  "rules": {
+      "files": [
+        "*.ts"
+      ],
+      "plugins": [
+        "prettier"
+      ],
+      "rules": {
         "@angular-eslint/component-selector": [
           "error",
           {
@@ -36,9 +42,13 @@
         "plugin:@angular-eslint/template/accessibility",
         "plugin:prettier/recommended"
       ],
-      "files": ["*.html"],
-  "plugins": ["prettier"],
-  "rules": {}
+      "files": [
+        "*.html"
+      ],
+      "plugins": [
+        "prettier"
+      ],
+      "rules": {}
     }
   ],
   "root": true
