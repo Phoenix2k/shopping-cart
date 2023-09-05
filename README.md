@@ -177,6 +177,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 - [DummyJSON](https://dummyjson.com/) for providing the list products
 
+## License
+
+[![MIT](https://img.shields.io/badge/license-MIT-green.svg)](LICENSE.md)
+
 [angular]: https://angular.io/
 [cli]: https://angular.io/cli
 [demo]: https://shopping-cart-sooty-eight.vercel.app
