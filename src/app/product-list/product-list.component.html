@@ -13,19 +13,19 @@
     *ngFor="let product of products"
   >
     <div
-      class="bg-white flex flex-col lg:flex-row gap-4 shadow-md rounded-3xl p-4"
+      class="bg-white flex flex-col lg:flex-row gap-4 h-full shadow-md rounded-3xl p-4"
     >
-      <div class="flex-none lg:flex h-full w-full lg:h-48 lg:w-48 lg:mb-0 mb-3">
+      <div class="flex-none lg:flex w-full lg:h-48 lg:w-48">
         <img
           alt="Product image"
-          class="w-full object-cover lg:object-cover lg:h-48 rounded-2xl"
+          class="h-64 lg:h-full object-cover rounded-2xl w-full lg:w-64"
           i18n-alt="product-image"
           itemprop="image"
           [src]="product.thumbnail"
         />
       </div>
-      <div class="flex flex-col justify-evenly ml-3 py-2 w-full">
-        <h3 class="flex h-full text-lg font-medium" itemprop="name">
+      <div class="flex flex-col justify-between h-full ml-3 py-2 w-full">
+        <h3 class="flex flex-1 text-lg font-medium" itemprop="name">
           {{ formatProductTitle(product) }}
         </h3>
         <div class="flex py-4 items-center text-gray-500 text-sm">
