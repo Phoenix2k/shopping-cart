@@ -44,20 +44,20 @@ devDependencies:
     specifier: 16.2.1
     version: 16.2.1(@angular/compiler-cli@16.2.3)(@angular/localize@16.2.3)(@types/node@20.5.9)(karma@6.4.2)(tailwindcss@3.3.3)(typescript@5.1.6)
   '@angular-eslint/builder':
-    specifier: 16.1.1
-    version: 16.1.1(eslint@8.48.0)(typescript@5.1.6)
+    specifier: 16.1.2
+    version: 16.1.2(eslint@8.48.0)(typescript@5.1.6)
   '@angular-eslint/eslint-plugin':
-    specifier: 16.1.1
-    version: 16.1.1(eslint@8.48.0)(typescript@5.1.6)
+    specifier: 16.1.2
+    version: 16.1.2(eslint@8.48.0)(typescript@5.1.6)
   '@angular-eslint/eslint-plugin-template':
-    specifier: 16.1.1
-    version: 16.1.1(eslint@8.48.0)(typescript@5.1.6)
+    specifier: 16.1.2
+    version: 16.1.2(eslint@8.48.0)(typescript@5.1.6)
   '@angular-eslint/schematics':
-    specifier: 16.1.1
-    version: 16.1.1(@angular/cli@16.2.1)(eslint@8.48.0)(typescript@5.1.6)
+    specifier: 16.1.2
+    version: 16.1.2(@angular/cli@16.2.1)(eslint@8.48.0)(typescript@5.1.6)
   '@angular-eslint/template-parser':
-    specifier: 16.1.1
-    version: 16.1.1(eslint@8.48.0)(typescript@5.1.6)
+    specifier: 16.1.2
+    version: 16.1.2(eslint@8.48.0)(typescript@5.1.6)
   '@angular/cli':
     specifier: 16.2.1
     version: 16.2.1
@@ -347,8 +347,8 @@ packages:
       - chokidar
     dev: true
 
-  /@angular-eslint/builder@16.1.1(eslint@8.48.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-NaB/A0mmlzp7laiucRUsRyoCrOE1In3UifsGP0vD6yjUpefk4g0v+0vCg8mhsIky8gYDtBE9YRfUiLA9FlF/FA==}
+  /@angular-eslint/builder@16.1.2(eslint@8.48.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-Y95IBEWqzWA7SyIh5nlPuFasw/4lOILrAdY5Ji6tOpIJgNFoiR9K1UcH46i34r3384ApN8GEQJ7FlK6D6qCOJA==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
@@ -363,18 +363,18 @@ packages:
       - debug
     dev: true
 
-  /@angular-eslint/bundled-angular-compiler@16.1.1:
-    resolution: {integrity: sha512-TB01AWZBDfrZBxN1I50HfBXtC7q4NI5fwl1aS4tOfef2/kQjTtR9zmha8CsxjDkAOa9tA/4MUayAMqEBQLuHKQ==}
+  /@angular-eslint/bundled-angular-compiler@16.1.2:
+    resolution: {integrity: sha512-wDiHPFsKTijMcQUPNcoHOJ5kezIPCCbmDK6LHH7hAdAC/eDY9NHL5e4zQ2Xkf3/r1PFuwVLGTwwreEHlmeENDw==}
     dev: true
 
-  /@angular-eslint/eslint-plugin-template@16.1.1(eslint@8.48.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-hwbpiUxLIY3TnZycieh+G4fbTWGMfzKx076O5Vuh2H4ZfXfs6ZXoi3Z0TH6X9lTmdgrwzOg1v4o5kdqu7MqPBg==}
+  /@angular-eslint/eslint-plugin-template@16.1.2(eslint@8.48.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-2qsoUgPg9Qp4EVUJRwWcJ+8JMxBb0ma3pNBjFmY6LOd59igRYorJKfWep4Nln1EicYRDRsCLzeLHO976+b1yaQ==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': 16.1.1
-      '@angular-eslint/utils': 16.1.1(eslint@8.48.0)(typescript@5.1.6)
+      '@angular-eslint/bundled-angular-compiler': 16.1.2
+      '@angular-eslint/utils': 16.1.2(eslint@8.48.0)(typescript@5.1.6)
       '@typescript-eslint/type-utils': 5.62.0(eslint@8.48.0)(typescript@5.1.6)
       '@typescript-eslint/utils': 5.62.0(eslint@8.48.0)(typescript@5.1.6)
       aria-query: 5.3.0
@@ -385,13 +385,13 @@ packages:
       - supports-color
     dev: true
 
-  /@angular-eslint/eslint-plugin@16.1.1(eslint@8.48.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-GauEwFGEcgIdsld4cVarFJYYxaRbMLzbpxyvBUDFg4LNjlcQNt7zfqXRLJoZAaFJFPtGtAoo1+6BlEKErsntuQ==}
+  /@angular-eslint/eslint-plugin@16.1.2(eslint@8.48.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-lYVvoKUIOg/ez15yfN4zY2A++vnIeJe1xh2ADNTmmjSh2PFV24K9YOgrTbgrY3Ul9kzGDTBkvYqslq+IvMGdIw==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/utils': 16.1.1(eslint@8.48.0)(typescript@5.1.6)
+      '@angular-eslint/utils': 16.1.2(eslint@8.48.0)(typescript@5.1.6)
       '@typescript-eslint/utils': 5.62.0(eslint@8.48.0)(typescript@5.1.6)
       eslint: 8.48.0
       typescript: 5.1.6
@@ -399,13 +399,13 @@ packages:
       - supports-color
     dev: true
 
-  /@angular-eslint/schematics@16.1.1(@angular/cli@16.2.1)(eslint@8.48.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-KlR01gpURPjz5OcoEvmKv3zi8l6lFpXYmqkXbGMCz828QlqBz1X7iGLAPJki+WUFSFKbRsf4qqaWq6O/8vph7Q==}
+  /@angular-eslint/schematics@16.1.2(@angular/cli@16.2.1)(eslint@8.48.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-319i47NU6nfaAaQTQYN7k320proTIBCueWGt+fbT11210CMqQriFmD+B85AatCwQgMgLd8Rhs1/F7YL2OOhegA==}
     peerDependencies:
       '@angular/cli': '>= 16.0.0 < 17.0.0'
     dependencies:
-      '@angular-eslint/eslint-plugin': 16.1.1(eslint@8.48.0)(typescript@5.1.6)
-      '@angular-eslint/eslint-plugin-template': 16.1.1(eslint@8.48.0)(typescript@5.1.6)
+      '@angular-eslint/eslint-plugin': 16.1.2(eslint@8.48.0)(typescript@5.1.6)
+      '@angular-eslint/eslint-plugin-template': 16.1.2(eslint@8.48.0)(typescript@5.1.6)
       '@angular/cli': 16.2.1
       '@nx/devkit': 16.5.1(nx@16.5.1)
       ignore: 5.2.4
@@ -421,25 +421,25 @@ packages:
       - typescript
     dev: true
 
-  /@angular-eslint/template-parser@16.1.1(eslint@8.48.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-ZJ+M4+JGYcsIP/t+XiuzL5A5pCjjCen272U3/M/WqIMDDxyIKrHubK1bVtr2kndCEudqud+WyJU0ub13UIwGgw==}
+  /@angular-eslint/template-parser@16.1.2(eslint@8.48.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-vIkPOShVJLBEHYY3jISCVvJF3lXL//Y70J8T9lY2CBowgqp6AzzJ6cZU7JxrORN6b64rBUVvUtCGo8L36GvfuA==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': 16.1.1
+      '@angular-eslint/bundled-angular-compiler': 16.1.2
       eslint: 8.48.0
       eslint-scope: 7.2.2
       typescript: 5.1.6
     dev: true
 
-  /@angular-eslint/utils@16.1.1(eslint@8.48.0)(typescript@5.1.6):
-    resolution: {integrity: sha512-cmSTyFFY2TMLjhKdju0KQ9GB6nnXt1AbY9tZ0UtWGo3NKbrBUogc+PR9ma17VRAGhvdj/sSVkStphJH3F7rUgQ==}
+  /@angular-eslint/utils@16.1.2(eslint@8.48.0)(typescript@5.1.6):
+    resolution: {integrity: sha512-2yfEK3BPSJsUhP4JCz0EB6ktu4E4+/zc9qdtZvPWNF/eww2J/oYVPjY47C/HVg4MXpjJTI8vbdkvcnxrICIkfw==}
     peerDependencies:
       eslint: ^7.20.0 || ^8.0.0
       typescript: '*'
     dependencies:
-      '@angular-eslint/bundled-angular-compiler': 16.1.1
+      '@angular-eslint/bundled-angular-compiler': 16.1.2
       '@typescript-eslint/utils': 5.62.0(eslint@8.48.0)(typescript@5.1.6)
       eslint: 8.48.0
       typescript: 5.1.6
@@ -3387,7 +3387,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.10
-      caniuse-lite: 1.0.30001525
+      caniuse-lite: 1.0.30001527
       fraction.js: 4.3.6
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -3403,7 +3403,7 @@ packages:
       postcss: ^8.1.0
     dependencies:
       browserslist: 4.21.10
-      caniuse-lite: 1.0.30001525
+      caniuse-lite: 1.0.30001527
       fraction.js: 4.3.6
       normalize-range: 0.1.2
       picocolors: 1.0.0
@@ -3626,7 +3626,7 @@ packages:
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
     hasBin: true
     dependencies:
-      caniuse-lite: 1.0.30001525
+      caniuse-lite: 1.0.30001527
       electron-to-chromium: 1.4.508
       node-releases: 2.0.13
       update-browserslist-db: 1.0.11(browserslist@4.21.10)
@@ -3678,7 +3678,7 @@ packages:
       minipass-pipeline: 1.2.4
       p-map: 4.0.0
       ssri: 10.0.5
-      tar: 6.1.15
+      tar: 6.2.0
       unique-filename: 3.0.0
     dev: true
 
@@ -3718,8 +3718,8 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /caniuse-lite@1.0.30001525:
-    resolution: {integrity: sha512-/3z+wB4icFt3r0USMwxujAqRvaD/B7rvGTsKhbhSQErVrJvkZCLhgNLJxU8MevahQVH6hCU9FsHdNUFbiwmE7Q==}
+  /caniuse-lite@1.0.30001527:
+    resolution: {integrity: sha512-YkJi7RwPgWtXVSgK4lG9AHH57nSzvvOp9MesgXmw4Q7n0C3H04L0foHqfxcmSAm5AcWb8dW9AYj2tR7/5GnddQ==}
 
   /chalk@2.4.2:
     resolution: {integrity: sha512-Mti+f9lpJNcwF4tWV8/OrTTtF1gZi+f8FqlyAdouralcFWFQWF2+NgCHShjkCb+IFBLq9buZwE1xckQU4peSuQ==}
@@ -6888,7 +6888,7 @@ packages:
       npmlog: 6.0.2
       rimraf: 3.0.2
       semver: 7.5.4
-      tar: 6.1.15
+      tar: 6.2.0
       which: 2.0.2
     transitivePeerDependencies:
       - supports-color
@@ -7312,7 +7312,7 @@ packages:
       read-package-json-fast: 3.0.2
       sigstore: 1.9.0
       ssri: 10.0.5
-      tar: 6.1.15
+      tar: 6.2.0
     transitivePeerDependencies:
       - bluebird
       - supports-color
@@ -8737,8 +8737,8 @@ packages:
       readable-stream: 3.6.2
     dev: true
 
-  /tar@6.1.15:
-    resolution: {integrity: sha512-/zKt9UyngnxIT/EAGYuxaMYgOIJiP81ab9ZfkILq4oNLPFX50qyYmu7jRj9qeXoxmJHjGlbH0+cm2uy1WCs10A==}
+  /tar@6.2.0:
+    resolution: {integrity: sha512-/Wo7DcT0u5HUV486xg675HtjNd3BXZ6xDbzsCUZPt5iw8bTQ63bP0Raut3mvro9u+CUyq7YQd8Cx55fsZXxqLQ==}
     engines: {node: '>=10'}
     dependencies:
       chownr: 2.0.0
