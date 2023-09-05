@@ -2,8 +2,12 @@
   // For more information, visit: https://go.microsoft.com/fwlink/?linkid=827846
   "recommendations": [
     "angular.ng-template",
+    "bradlc.vscode-tailwindcss",
     "dbaeumer.vscode-eslint",
     "esbenp.prettier-vscode",
+    "MaxvanderSchee.web-accessibility",
+    "redhat.vscode-yaml",
+    "streetsidesoftware.code-spell-checker",
     "stylelint.vscode-stylelint"
   ]
 }
