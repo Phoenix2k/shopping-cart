@@ -1,0 +1,8 @@
+<a
+  class="flex items-center mb-2 md:mb-0 bg-gray-900 hover:bg-gray-800 px-5 py-2 rounded-full shadow-sm text-white"
+  [href]="href"
+  [routerLink]="routerLink"
+  *ngIf="href || routerLink"
+>
+  <ng-content />
+</a>
