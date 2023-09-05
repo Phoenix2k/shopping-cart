@@ -9,6 +9,7 @@ import { LinkButtonComponent } from './link-button/link-button.component';
 import { LoggerService } from './logger.service';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product/product.component';
+import { HeaderComponent } from './header/header.component';
 
 @NgModule({
   bootstrap: [AppComponent],
@@ -17,6 +18,7 @@ import { ProductComponent } from './product/product.component';
     LinkButtonComponent,
     ProductComponent,
     ProductListComponent,
+    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [ApiService, LoggerService],
