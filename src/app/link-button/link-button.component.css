@@ -1,5 +1,3 @@
-:host {
-  i {
-    @apply mr-2;
-  }
+i {
+  @apply mr-2;
 }

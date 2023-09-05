@@ -1,6 +1,6 @@
-<h1><a i18n="app-name" routerLink="/">Shopping Cart</a></h1>
+<h1><a i18n="app-name" [routerLink]="['/']">Shopping Cart</a></h1>
 
 <app-link-button routerLink="/checkout">
   <i aria-hidden="true" class="material-icons">shopping_cart</i>
-  Checkout
+  <span i18n="checkout">Checkout</span>
 </app-link-button>

@@ -3,7 +3,7 @@
   itemscope
   itemtype="https://schema.org/Product"
 >
-  <p>
+  <aside>
     <a
       class="flex items-center m-4"
       data-testid="back-link"
@@ -12,39 +12,28 @@
       <i aria-hidden="true" class="material-icons">arrow_back_ios</i>
       <span i18n="back-to-products">Back to products</span>
     </a>
-  </p>
+  </aside>
   <div
-    class="flex flex-col px-4"
+    class="flex flex-col lg:flex-row-reverse gap-4"
     itemscope
     itemtype="https://schema.org/Product"
   >
     <img
       alt="Product image"
-      class="w-full object-cover lg:object-cover lg:h-48 rounded-2xl"
+      class="rounded-2xl"
       i18n-alt="product-image"
       itemprop="image"
       [src]="product.thumbnail"
     />
-  </div>
-  <div class="flex-auto ml-3 justify-evenly p-4">
-    <div class="flex flex-wrap">
-      <h2 class="flex-auto text-lg font-medium" itemprop="name">
+    <div class="ml-3 justify-evenly p-2 lg:p-4 lg:pl-0 lg:p w-full">
+      <h2 class="font-bold mb-4 text-4xl w-full" itemprop="name">
         {{ formatProductTitle(product) }}
       </h2>
-    </div>
-    <p class="text-gray-500 mt-2">{{ product.description }}</p>
-    <div class="flex py-4 text-sm text-gray-500">
-      <div class="flex-1 inline-flex items-center">
-        <i
-          aria-hidden="true"
-          class="material-icons mr-2"
-          i18n="category"
-          i18n-title="category-title"
-          title="Category"
-          >category</i
-        >
-        <p class="">{{ formatProductCategory(product) }}</p>
-      </div>
+      <p class="text-gray-500 text-lg">{{ product.description }}</p>
+      <p class="flex items-center my-4 text-sm text-gray-500">
+        <i aria-hidden="true" class="material-icons mr-2">category</i>
+        {{ formatProductCategory(product) }}
+      </p>
     </div>
   </div>
 </article>

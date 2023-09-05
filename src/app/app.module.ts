@@ -15,10 +15,10 @@ import { HeaderComponent } from './header/header.component';
   bootstrap: [AppComponent],
   declarations: [
     AppComponent,
+    HeaderComponent,
     LinkButtonComponent,
     ProductComponent,
     ProductListComponent,
-    HeaderComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [ApiService, LoggerService],

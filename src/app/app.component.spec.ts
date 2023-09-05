@@ -12,6 +12,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 import { ApiService } from './api.service';
 import { routes } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './header/header.component';
 import { ProductListComponent } from './product-list/product-list.component';
 
 describe('AppComponent', () => {
@@ -21,7 +22,7 @@ describe('AppComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [AppComponent, ProductListComponent],
+      declarations: [AppComponent, HeaderComponent, ProductListComponent],
       imports: [RouterTestingModule.withRoutes(routes)],
       providers: [ApiService, HttpClient, HttpHandler],
     }).compileComponents();

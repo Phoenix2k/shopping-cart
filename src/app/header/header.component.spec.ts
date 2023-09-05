@@ -1,5 +1,8 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { RouterTestingModule } from '@angular/router/testing';
 
+import { routes } from '../app-routing.module';
+import { LinkButtonComponent } from '../link-button/link-button.component';
 import { HeaderComponent } from './header.component';
 
 describe('HeaderComponent', () => {
@@ -8,7 +11,8 @@ describe('HeaderComponent', () => {
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [HeaderComponent],
+      declarations: [HeaderComponent, LinkButtonComponent],
+      imports: [RouterTestingModule.withRoutes(routes)],
     });
     fixture = TestBed.createComponent(HeaderComponent);
     component = fixture.componentInstance;
