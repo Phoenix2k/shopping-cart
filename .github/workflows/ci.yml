@@ -46,6 +46,7 @@ jobs:
         run: pnpm lint
 
       - name: Run unit tests
+        id: unit-tests
         run: pnpm test:unit
 
       - name: Install browsers for E2E tests
@@ -54,6 +55,13 @@ jobs:
       - name: Run E2E tests
         id: e2e-tests
         run: pnpm test:e2e
+
+      - name: Upload code coverage report
+        uses: actions/upload-artifact@v3
+        with:
+          name: coverage-report
+          path: coverage/
+          retention-days: 30
 
       - name: Upload Playwright report
         uses: actions/upload-artifact@v3
