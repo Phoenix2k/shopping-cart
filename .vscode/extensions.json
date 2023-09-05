@@ -3,7 +3,9 @@
   "recommendations": [
     "angular.ng-template",
     "bradlc.vscode-tailwindcss",
+    "csstools.postcss",
     "dbaeumer.vscode-eslint",
+    "EditorConfig.EditorConfig",
     "esbenp.prettier-vscode",
     "MaxvanderSchee.web-accessibility",
     "redhat.vscode-yaml",

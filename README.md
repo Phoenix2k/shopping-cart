@@ -8,11 +8,11 @@ Shopping cart inspired from the [Managing data](https://angular.io/start/start-d
 
 ## Goals
 
-- Learn Angular and its tooling
-- Create [components](https://angular.io/cli/generate#component-command), [modules](https://angular.io/cli/generate#module-command) and [services](https://angular.io/cli/generate#service-command)
+- [Learn Angular](https://angular.io/docs) and its tooling
+- Explore [concepts](https://angular.io/guide/architecture) such as [components](https://angular.io/cli/generate#component-command), [modules](https://angular.io/cli/generate#module-command) and [services](https://angular.io/cli/generate#service-command)
 - Handle [localization][i18n] and translations
 - Understand [RxJS](https://rxjs.dev/)
-- [Deploy][deployment] the app
+- [Deploy][deployment] the app to a hosting service
 
 ## Demo
 
@@ -40,8 +40,12 @@ The editor will present you with a list of recommended plugins to install for a 
 - [Angular][angular]
 - [ESLint][eslint]
 - [Karma][karma]
+- [Lefthook][lefthook]
 - [Playwright][playwright]
+- [PostCSS][postcss]
+- [Prettier][prettier]
 - [Stylelint][stylelint]
+- [Tailwind CSS][tailwind]
 - [TypeScript][typescript]
 
 ## Installation
@@ -54,7 +58,7 @@ cd shopping-cart
 # Use the Node version specified in `.nvmrc`
 nvm use
 
-# Install the project dependencies
+# Install dependencies
 pnpm install
 ```
 
@@ -92,7 +96,7 @@ pnpm lint
 pnpm lint:fix
 ```
 
-> Changed files will be linted automatically by [Lefthook](https://github.com/evilmartians/lefthook) when creating a new Git commit.
+> Changed files will be linted automatically by [Lefthook][lefthook] when creating a new Git commit.
 
 ## Build for production
 
@@ -188,6 +192,10 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 [eslint]: https://eslint.org/
 [i18n]: https://angular.io/guide/i18n-overview
 [karma]: https://karma-runner.github.io
+[lefthook]: https://github.com/evilmartians/lefthook
 [playwright]: https://playwright.dev/
+[postcss]: https://postcss.org/
+[prettier]: https://prettier.io/
+[tailwind]: https://tailwindcss.com/
 [stylelint]: https://stylelint.io/
 [typescript]: https://www.typescriptlang.org/
