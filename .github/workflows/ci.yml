@@ -19,14 +19,14 @@ jobs:
         with:
           node-version: 18
 
-      - name: Install package manager
+      - name: Install pnpm package manager
         id: pnpm-install
         uses: pnpm/action-setup@v2
         with:
           run_install: false
           version: 8
 
-      - name: Get pnpm store directory
+      - name: Determine pnpm store directory
         id: pnpm-cache
         run: echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
         shell: bash
@@ -43,14 +43,17 @@ jobs:
         run: pnpm install
         working-directory: .
 
-      - name: Install Playwright Browsers
-        run: pnpm exec playwright install --with-deps
-
       - name: Lint files
         run: pnpm lint
 
-      - name: Run tests
-        run: pnpm test
+      - name: Run unit tests
+        run: pnpm test:unit
+
+      - name: Install browsers for E2E tests
+        run: pnpm exec playwright install --with-deps
+
+      - name: Run E2E tests
+        run: pnpm test:e2e
 
       - uses: actions/upload-artifact@v3
         if: always()
