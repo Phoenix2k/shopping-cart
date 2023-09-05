@@ -1,4 +1,4 @@
-# Shopping Cart
+# Shopping Cart 🚧 `WIP`
 
 [![GitHub Workflow Status](https://github.com/Phoenix2k/shopping-cart/actions/workflows/ci.yml/badge.svg)](https://github.com/Phoenix2k/shopping-cart/actions/workflows/ci.yml) [![Vercel](https://vercelbadge.vercel.app/api/phoenix2k/shopping-cart)][demo]
 
@@ -16,9 +16,9 @@ Shopping cart inspired from the [Managing data](https://angular.io/start/start-d
 
 ## Demo
 
-This codebase has been deployed to Vercel.
+[Open demo][demo]
 
-[See demo][demo]
+> This codebase is automatically deployed to [Vercel](https://vercel.com). See [other deployment][deployment] options.
 
 ## Prerequisites
 
@@ -31,9 +31,7 @@ This codebase has been deployed to Vercel.
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 
-The editor will present you with a list of recommended plugins to install for a better developer experience.
-
-> See [`.vscode/extensions.json`](.vscode/extensions.json) for the full list.
+> See [`.vscode/extensions.json`](.vscode/extensions.json) for a full list of recommended plugins.
 
 ## Stack
 
@@ -64,7 +62,7 @@ pnpm install
 
 ## Development
 
-Start the dev server:
+Start the development server:
 
 ```shell
 pnpm dev
@@ -114,7 +112,7 @@ See [Angular Internationalization][i18n] for more information about translations
 
 ### Extract the source language file
 
-Extract all strings marked for translation to the default [`messages.json`](./src/locales/messages.json) file:
+Extract all strings in the default language marked for translation to the [`messages.json`](./src/locales/messages.json) file:
 
 ```shell
 pnpm extract:i18n
@@ -126,6 +124,10 @@ pnpm extract:i18n
 
 - English (`en-US`), default locale
 - Finnish (`fi-FI`)
+
+### Adding locales
+
+See [Work with translation files](https://angular.io/guide/i18n-common-translation-files) for more information on how to create new translations.
 
 ### Build for a specific locale
 
