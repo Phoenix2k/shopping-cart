@@ -4,7 +4,7 @@ import { Component } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
 
-import type { Product } from '../../types';
+import type { Product } from '../../schemas';
 import { ApiService } from '../api.service';
 import { LoggerService } from '../logger.service';
 import Utils from '../../utils';
