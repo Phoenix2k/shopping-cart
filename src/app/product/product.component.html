@@ -5,7 +5,7 @@
 >
   <p>
     <a class="flex items-center m-4" data-testid="back-link" href="/products">
-      <span class="material-icons">arrow_back_ios</span>
+      <i aria-hidden="true" class="material-icons">arrow_back_ios</i>
       <span i18n="back-to-products">Back to products</span>
     </a>
   </p>
@@ -31,7 +31,14 @@
     <p class="text-gray-500 mt-2">{{ product.description }}</p>
     <div class="flex py-4 text-sm text-gray-500">
       <div class="flex-1 inline-flex items-center">
-        <i class="material-icons mr-2" title="Category">category</i>
+        <i
+          aria-hidden="true"
+          class="material-icons mr-2"
+          i18n="category"
+          i18n-title="category-title"
+          title="Category"
+          >category</i
+        >
         <p class="">{{ formatProductCategory(product) }}</p>
       </div>
     </div>
