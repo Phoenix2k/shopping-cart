@@ -37,6 +37,7 @@ node_modules
 !.gitignore
 !.gitkeep
 !.nvmrc
+!.postcssrc*
 !.prettierrc*
 !.stylelintrc*
 !.vscode
