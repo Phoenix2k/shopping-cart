@@ -1,6 +1,19 @@
-<h1><a i18n="app-name" [routerLink]="['/']">Shopping Cart</a></h1>
+<h1>
+  <a class="font-bold text-xl uppercase" [routerLink]="['/']">
+    <span i18n="app-name">Shopping Cart</span>
+  </a>
+</h1>
 
 <app-link-button routerLink="/checkout">
-  <i aria-hidden="true" class="material-icons">shopping_cart</i>
   <span i18n="checkout">Checkout</span>
+  <span class="inline-flex relative ml-2">
+    <span class="t-0 absolute left-3 -top-3" *ngIf="amount">
+      <span
+        class="flex h-1 w-1 items-center justify-center rounded-full bg-red-500 p-3 text-xs text-white"
+      >
+        {{ amount }}
+      </span>
+    </span>
+    <i aria-hidden="true" class="material-icons">shopping_cart</i>
+  </span>
 </app-link-button>
