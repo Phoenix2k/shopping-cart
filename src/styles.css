@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .button {
+    @apply bg-gray-900 hover:bg-gray-800;
+    @apply flex items-center;
+    @apply px-5 py-2;
+    @apply rounded-full;
+    @apply shadow-sm;
+    @apply text-white;
+    @apply transition;
+  }
+}
