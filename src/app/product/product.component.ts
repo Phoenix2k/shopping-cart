@@ -14,7 +14,7 @@ import Utils from '../../utils';
   styleUrls: ['./product.component.css'],
   templateUrl: './product.component.html',
 })
-export class ProductComponent implements OnInit, OnDestroy {
+export class ProductComponent implements OnDestroy, OnInit {
   private apiSub: Subscription | null = null;
   private routeSub: Subscription | null = null;
 
@@ -29,17 +29,22 @@ export class ProductComponent implements OnInit, OnDestroy {
     private titleService: Title,
   ) {}
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.routeSub = this.route.params?.subscribe((params) => {
-      this.apiSub = this.api.getProduct(+params['id']).subscribe((response) => {
-        this.logger.debug('Product received from API:', response);
+      const productId: number = +params['id'];
+      this.logger.log(`Fetching product ${productId}…`);
+      this.apiSub = this.api.getProduct(productId).subscribe((response) => {
+        this.logger.info(
+          response ? 'Product received successfully.' : 'Product not found.',
+        );
+        this.logger.debug('Response from API:', response);
         this.product = response;
         this.titleService.setTitle(Utils.formatProductTitle(this.product));
       });
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.apiSub?.unsubscribe();
     this.routeSub?.unsubscribe();
   }

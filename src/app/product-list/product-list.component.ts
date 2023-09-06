@@ -13,7 +13,7 @@ import Utils from '../../utils';
   styleUrls: ['./product-list.component.css'],
   templateUrl: './product-list.component.html',
 })
-export class ProductListComponent implements OnInit, OnDestroy {
+export class ProductListComponent implements OnDestroy, OnInit {
   private apiSub: Subscription | null = null;
 
   public formatProductCategory = Utils.formatProductCategory;
@@ -28,14 +28,14 @@ export class ProductListComponent implements OnInit, OnDestroy {
     this.titleService.setTitle('Shopping Cart');
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
     this.apiSub = this.api.getProducts()?.subscribe((response) => {
       this.logger.debug('Products received from API:', response.products);
       this.products = response.products;
     });
   }
 
-  ngOnDestroy() {
+  ngOnDestroy(): void {
     this.apiSub?.unsubscribe();
   }
 }
