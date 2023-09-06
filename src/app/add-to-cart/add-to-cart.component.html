@@ -1,0 +1,8 @@
+<form
+  class="place-self-end"
+  [formGroup]="addToCartForm"
+  (ngSubmit)="addToCart()"
+>
+  <input name="product-id" type="hidden" [value]="product?.id" />
+  <button class="button" i18n="add-to-cart" type="submit">Add to cart</button>
+</form>
