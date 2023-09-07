@@ -1,4 +1,5 @@
-/* To learn more about this file see: https://angular.io/config/tsconfig. */ {
+/* To learn more about this file see: https://angular.io/config/tsconfig. */
+{
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
@@ -13,9 +14,9 @@
     "experimentalDecorators": true,
     "forceConsistentCasingInFileNames": true,
     "importHelpers": true,
-    "lib": ["ES2022", "dom"],
-    "module": "ES2022",
-    "moduleResolution": "node",
+    "lib": ["dom", "ESNext"],
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "noFallthroughCasesInSwitch": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
@@ -24,11 +25,11 @@
     "paths": {
       "@components/*": ["src/app/components/*"],
       "@layout/*": ["src/app/layout/*"],
-      "@locales/*": ["src/locales/*"],
       "@services/*": ["src/app/services/*"],
       "@views/*": ["src/app/views/*"],
       "@app/*": ["src/app/*"],
       "@assets/*": ["src/assets/*"],
+      "@locales/*": ["src/locales/*"],
       "@schemas": ["src/schemas"],
       "@utils": ["src/utils"]
     },
