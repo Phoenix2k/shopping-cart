@@ -3,17 +3,17 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AddToCartComponent } from './add-to-cart/add-to-cart.component';
-import { ApiService } from './api.service';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { CartService } from './cart.service';
-import { HeaderComponent } from './header/header.component';
-import { LinkButtonComponent } from './link-button/link-button.component';
-import { LoggerService } from './logger.service';
-import { ProductListComponent } from './product-list/product-list.component';
-import { ProductComponent } from './product/product.component';
-import { SessionStorageService } from './session-storage.service';
+import { HeaderComponent } from './layout/header/header.component';
+import { ApiService } from './services/api/api.service';
+import { CartService } from './services/cart/cart.service';
+import { LoggerService } from './services/logger/logger.service';
+import { SessionStorageService } from './services/session-storage/session-storage.service';
+import { AddToCartComponent } from './shared/add-to-cart/add-to-cart.component';
+import { LinkButtonComponent } from './shared/link-button/link-button.component';
+import { ProductListComponent } from './views/product-list/product-list.component';
+import { ProductComponent } from './views/product/product.component';
 
 @NgModule({
   bootstrap: [AppComponent],

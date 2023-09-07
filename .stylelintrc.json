@@ -1,6 +1,12 @@
 {
   "extends": "stylelint-config-standard",
   "ignoreFiles": ["coverage/**", "dist/**"],
+  "overrides": [
+    {
+      "customSyntax": "postcss-angular",
+      "files": ["**/*.component.ts"]
+    }
+  ],
   "rules": {
     "at-rule-no-unknown": [
       true,

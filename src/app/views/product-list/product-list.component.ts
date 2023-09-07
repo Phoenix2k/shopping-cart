@@ -1,12 +1,11 @@
-import type { OnDestroy, OnInit } from '@angular/core';
-import type { Subscription } from 'rxjs';
-import { Component } from '@angular/core';
+import { Component, type OnDestroy, type OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
+import { type Subscription } from 'rxjs';
 
-import type { Product } from '../../schemas';
-import { ApiService } from '../api.service';
-import { LoggerService } from '../logger.service';
-import Utils from '../../utils';
+import { type Product } from '../../../schemas';
+import Utils from '../../../utils';
+import { ApiService } from '../../services/api/api.service';
+import { LoggerService } from '../../services/logger/logger.service';
 
 @Component({
   selector: 'app-product-list',
@@ -29,8 +28,14 @@ export class ProductListComponent implements OnDestroy, OnInit {
   }
 
   ngOnInit(): void {
+    this.logger.log(`Fetching products…`);
     this.apiSub = this.api.getProducts()?.subscribe((response) => {
-      this.logger.debug('Products received from API:', response.products);
+      this.logger.debug('Response from API:', response);
+      this.logger.info(
+        response?.products?.length
+          ? 'Product received successfully.'
+          : 'No products found.',
+      );
       this.products = response.products;
     });
   }

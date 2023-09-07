@@ -1,7 +1,8 @@
-import type { Observable } from 'rxjs';
-import type { Product } from '../schemas';
-import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { type Observable } from 'rxjs';
+
+import { type Product } from '../../../schemas';
 
 export interface ResponseProducts {
   limit: number;

@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { ProductSchema, type Product } from '../schemas';
-import { LoggerService } from './logger.service';
-import { SessionStorageService } from './session-storage.service';
+import { ProductSchema, type Product } from '../../../schemas';
+import { LoggerService } from '../logger/logger.service';
+import { SessionStorageService } from '../session-storage/session-storage.service';
 
 const KEY_CART_SERVICE = 'cart';
 

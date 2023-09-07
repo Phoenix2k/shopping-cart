@@ -1,13 +1,12 @@
-import type { OnDestroy, OnInit } from '@angular/core';
-import type { Subscription } from 'rxjs';
-import { Component } from '@angular/core';
+import { Component, type OnDestroy, type OnInit } from '@angular/core';
 import { Title } from '@angular/platform-browser';
 import { ActivatedRoute } from '@angular/router';
+import { type Subscription } from 'rxjs';
 
-import type { Product } from '../../schemas';
-import { ApiService } from '../api.service';
-import { LoggerService } from '../logger.service';
-import Utils from '../../utils';
+import { type Product } from '../../../schemas';
+import Utils from '../../../utils';
+import { ApiService } from '../../services/api/api.service';
+import { LoggerService } from '../../services/logger/logger.service';
 
 @Component({
   selector: 'app-product',
@@ -34,10 +33,10 @@ export class ProductComponent implements OnDestroy, OnInit {
       const productId: number = +params['id'];
       this.logger.log(`Fetching product ${productId}…`);
       this.apiSub = this.api.getProduct(productId).subscribe((response) => {
+        this.logger.debug('Response from API:', response);
         this.logger.info(
           response ? 'Product received successfully.' : 'Product not found.',
         );
-        this.logger.debug('Response from API:', response);
         this.product = response;
         this.titleService.setTitle(Utils.formatProductTitle(this.product));
       });
