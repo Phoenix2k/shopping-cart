@@ -12,6 +12,7 @@ import { ApiService } from '@services/api/api.service';
 import { CartService } from '@services/cart/cart.service';
 import { LoggerService } from '@services/logger/logger.service';
 import { SessionStorageService } from '@services/session-storage/session-storage.service';
+import { CheckoutComponent } from '@views/checkout/checkout.component';
 import { ProductListComponent } from '@views/product-list/product-list.component';
 import { ProductComponent } from '@views/product/product.component';
 
@@ -20,6 +21,7 @@ import { ProductComponent } from '@views/product/product.component';
   declarations: [
     AddToCartComponent,
     AppComponent,
+    CheckoutComponent,
     HeaderComponent,
     LinkButtonComponent,
     ProductComponent,
