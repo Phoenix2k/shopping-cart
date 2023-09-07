@@ -12,4 +12,12 @@
     @apply text-white;
     @apply transition;
   }
+
+  .page-heading {
+    @apply font-bold;
+    @apply my-4;
+    @apply text-4xl;
+    @apply text-center sm:text-left;
+    @apply w-full;
+  }
 }
