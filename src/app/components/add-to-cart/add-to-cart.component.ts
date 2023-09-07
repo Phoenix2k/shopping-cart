@@ -1,8 +1,8 @@
 import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
-import { type Product } from '../../../schemas';
-import { CartService } from '../../services/cart/cart.service';
+import { type Product } from '@schemas';
+import { CartService } from '@services/cart/cart.service';
 
 @Component({
   selector: 'app-add-to-cart',

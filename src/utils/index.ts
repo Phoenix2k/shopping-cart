@@ -1,4 +1,4 @@
-import { type Product } from '../schemas';
+import { type Product } from '@schemas';
 
 export default class Utils {
   /**
