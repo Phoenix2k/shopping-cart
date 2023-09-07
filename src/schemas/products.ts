@@ -15,3 +15,10 @@ export const ProductSchema = z.object({
 });
 
 export type Product = z.infer<typeof ProductSchema>;
+
+export const CartProductSchema = z.object({
+  amount: z.number(),
+  product: ProductSchema,
+});
+
+export type CartProduct = z.infer<typeof CartProductSchema>;
