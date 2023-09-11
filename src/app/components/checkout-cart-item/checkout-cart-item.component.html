@@ -1,0 +1,55 @@
+<form
+  *ngIf="cartItem; else elseBlock"
+  class="product clear-left"
+  itemscope
+  itemtype="https://schema.org/Product"
+>
+  <legend class="font-bold mb-4">
+    {{ formatProductTitle(cartItem.product) }}
+  </legend>
+  <meta property="priceCurrency" [content]="getCurrency()" />
+  <img
+    alt="product-image"
+    class="h-28 object-cover float-left mb-8 mr-4 rounded-md w-28"
+    i18n-alt="product-image"
+    itemprop="image"
+    [src]="cartItem.product.thumbnail"
+  />
+  <label class="flex gap-4 items-center">
+    <span class="block">Amount</span>
+    <select
+      class="select w-14"
+      (change)="handleAmountChange($event, cartItem.product)"
+    >
+      <option
+        *ngFor="let amount of productAmounts(cartItem.product)"
+        [selected]="cartItem.amount === amount"
+        [value]="amount"
+      >
+        {{ amount }}
+      </option>
+    </select>
+  </label>
+  <p>
+    <button
+      class="appearance-none mt-3 text-gray-400 focus:text-red-500 hover:text-red-500 text-sm"
+      (click)="handleRemoveItem($event, cartItem.product)"
+      type="button"
+    >
+      Remove from cart
+    </button>
+  </p>
+  <p class="mt-4">
+    <label>
+      <strong>Price:</strong>
+      <input
+        class="ml-2"
+        disabled
+        itemprop="price"
+        [value]="calculatePrice(cartItem) | currency"
+        type="text"
+      />
+    </label>
+  </p>
+</form>
+<ng-template #elseBlock></ng-template>

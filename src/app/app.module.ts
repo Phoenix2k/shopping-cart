@@ -4,7 +4,11 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent, AppRoutingModule } from '@app';
-import { AddToCartComponent, LinkButtonComponent } from '@components';
+import {
+  AddToCartComponent,
+  CheckoutCartItemComponent,
+  LinkButtonComponent,
+} from '@components';
 import { HeaderComponent } from '@layout';
 import {
   ApiService,
@@ -23,6 +27,7 @@ import {
   declarations: [
     AddToCartComponent,
     AppComponent,
+    CheckoutCartItemComponent,
     CheckoutComponent,
     HeaderComponent,
     LinkButtonComponent,
