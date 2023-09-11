@@ -5,7 +5,7 @@
 >
   <aside>
     <a
-      class="flex items-center m-4"
+      class="flex items-center hover:!no-underline m-4"
       data-testid="back-link"
       routerLink="/products"
     >
@@ -36,7 +36,7 @@
         <i aria-hidden="true" class="material-icons mr-2">category</i>
         {{ formatProductCategory(product) }}
       </p>
-      <app-add-to-cart class="mt-8" [product]="product"></app-add-to-cart>
+      <app-add-to-cart button-class="button mt-8" [product]="product" />
     </div>
   </div>
 </article>

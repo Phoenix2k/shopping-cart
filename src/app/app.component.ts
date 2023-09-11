@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 
-import { LoggerService } from '@services/logger/logger.service';
+import { LoggerService } from '@services';
 
 @Component({
   selector: 'app-root',

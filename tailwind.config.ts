@@ -14,6 +14,10 @@ export default {
         '2xl': '6rem',
       },
     },
-    extend: {},
+    extend: {
+      borderWidth: {
+        1: '1px',
+      },
+    },
   },
 } satisfies Config;

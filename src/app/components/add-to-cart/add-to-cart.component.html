@@ -4,5 +4,7 @@
   (ngSubmit)="addToCart()"
 >
   <input name="product-id" type="hidden" [value]="product?.id" />
-  <button class="button" i18n="add-to-cart" type="submit">Add to cart</button>
+  <button [class]="this['button-class']" type="submit">
+    <span i18n="add-to-cart">Add to cart</span>
+  </button>
 </form>

@@ -2,7 +2,7 @@ import { Component, Input } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 import { type Product } from '@schemas';
-import { CartService } from '@services/cart/cart.service';
+import { CartService } from '@services';
 
 @Component({
   selector: 'app-add-to-cart',
@@ -10,6 +10,7 @@ import { CartService } from '@services/cart/cart.service';
   templateUrl: './add-to-cart.component.html',
 })
 export class AddToCartComponent {
+  @Input() 'button-class' = 'button';
   @Input({ required: true }) product: Product | null = null;
 
   public addToCartForm = new FormGroup({
@@ -20,6 +21,6 @@ export class AddToCartComponent {
 
   addToCart(): void {
     if (!this.product) return;
-    this.cartService.addToCart(this.product);
+    this.cartService.addProductToCart(this.product);
   }
 }

@@ -4,8 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { type Subscription } from 'rxjs';
 
 import { type Product } from '@schemas';
-import { ApiService } from '@services/api/api.service';
-import { LoggerService } from '@services/logger/logger.service';
+import { ApiService, LoggerService } from '@services';
 import Utils from '@utils';
 
 @Component({

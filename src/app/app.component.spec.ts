@@ -9,11 +9,10 @@ import {
 import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { routes } from '@app/app-routing.module';
-import { AppComponent } from '@app/app.component';
-import { HeaderComponent } from '@layout/header/header.component';
-import { ApiService } from '@services/api/api.service';
-import { ProductListComponent } from '@views/product-list/product-list.component';
+import { AppComponent, routes } from '@app';
+import { HeaderComponent } from '@layout';
+import { ApiService } from '@services';
+import { ProductListComponent } from '@views';
 
 describe('AppComponent', () => {
   let fixture: ComponentFixture<AppComponent>;
