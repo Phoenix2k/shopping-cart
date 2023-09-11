@@ -2,18 +2,18 @@
   <h2 class="page-heading" i18n="checkout">Checkout</h2>
   <details open *ngIf="cartItems.value.length; else elseBlock">
     <summary class="sub-heading list-none pointer-events-none" tabindex="-1">
-      Summary
+      <span i18n="summary">Summary</span>
     </summary>
     <div class="separator mt-6"></div>
     <app-checkout-cart-item
-      [cartItem]="cartItem"
       (amountChange)="handleAmountChange($event.product, $event.amount)"
       (removeItem)="handleRemove($event)"
+      [cartItem]="cartItem"
       *ngFor="let cartItem of cartItems.value"
     />
     <div class="separator mt-8"></div>
     <dl class="flex items-center space-x-4 w-full">
-      <dt class="font-bold text-2xl">Total</dt>
+      <dt class="font-bold text-2xl" i18n="total">Total</dt>
       <dd>
         <data
           class="whitespace-nowrap"
@@ -24,8 +24,9 @@
     </dl>
   </details>
   <ng-template #elseBlock>
-    <p i18n="no-products-in-cart">
-      No products found in cart. <a routerLink="/products">Add some?</a>
+    <p>
+      <span class="mr-2" i18n="cart-empty">No products found in cart.</span>
+      <a routerLink="/products" i18n="add-some">Add some?</a>
     </p>
   </ng-template>
 </article>

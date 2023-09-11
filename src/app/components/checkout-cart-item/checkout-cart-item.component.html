@@ -4,19 +4,19 @@
   itemscope
   itemtype="https://schema.org/Product"
 >
-  <legend class="font-bold mb-4">
+  <legend class="font-bold mb-4" itemprop="name">
     {{ formatProductTitle(cartItem.product) }}
   </legend>
   <meta property="priceCurrency" [content]="getCurrency()" />
   <img
-    alt="product-image"
+    alt="Product image"
     class="h-28 object-cover float-left mb-8 mr-4 rounded-md w-28"
     i18n-alt="product-image"
     itemprop="image"
     [src]="cartItem.product.thumbnail"
   />
   <label class="flex gap-4 items-center">
-    <span class="block">Amount</span>
+    <span class="block" i18n="amount-label">Amount</span>
     <select
       class="select w-14"
       (change)="handleAmountChange($event, cartItem.product)"
@@ -32,16 +32,16 @@
   </label>
   <p>
     <button
-      class="appearance-none mt-3 text-gray-400 focus:text-red-500 hover:text-red-500 text-sm"
       (click)="handleRemoveItem($event, cartItem.product)"
+      class="appearance-none mt-3 text-gray-400 focus:text-red-500 hover:text-red-500 text-sm"
       type="button"
     >
-      Remove from cart
+      <span i18n="remove-from-cart">Remove from cart</span>
     </button>
   </p>
   <p class="mt-4">
     <label>
-      <strong>Price:</strong>
+      <strong i18n="price-label">Price:</strong>
       <input
         class="ml-2"
         disabled
