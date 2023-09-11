@@ -1,10 +1,10 @@
 import { Component, type OnDestroy, type OnInit } from '@angular/core';
-import { type Subscription } from 'rxjs';
-
 import { Title } from '@angular/platform-browser';
-import { type CartProduct, type Product } from '@schemas';
-import { CartService } from '@services/cart/cart.service';
-import { LoggerService } from '@services/logger/logger.service';
+import { BehaviorSubject, type Subscription } from 'rxjs';
+
+import { CartItem, type Product } from '@schemas';
+import { CartService, LoggerService } from '@services';
+import Utils from '@utils';
 
 @Component({
   selector: 'app-checkout',
@@ -14,8 +14,11 @@ import { LoggerService } from '@services/logger/logger.service';
 export class CheckoutComponent implements OnDestroy, OnInit {
   private cartSub: Subscription | null = null;
 
-  public cartProducts: CartProduct[] = [];
-  public products: Product[] = [];
+  public calculatePrice = Utils.calculatePrice;
+  public calculateTotals = Utils.calculateTotals;
+  public cartItems = new BehaviorSubject<CartItem[]>([]);
+  public getCurrency = Utils.getCurrency;
+  public removeFromCart = this.cartService.removeFromCart;
 
   constructor(
     private cartService: CartService,
@@ -23,25 +26,27 @@ export class CheckoutComponent implements OnDestroy, OnInit {
     private title: Title,
   ) {}
 
-  public countProducts(productId: number): number {
-    return this.products.filter((product) => product.id === productId).length;
+  public handleAmountChange(product: Product, newAmount: number): void {
+    const currentAmount =
+      this.cartItems.value.find((c) => c.product.id === product.id)?.amount ??
+      0;
+    this.logger.table({
+      'Current amount': currentAmount,
+      'New amount': newAmount,
+      'T/F': currentAmount < newAmount,
+    });
+    this.cartService.updateAmount(product, newAmount);
   }
 
-  public cartProductsToString(): string {
-    return JSON.stringify(this.cartProducts, null, 2);
+  public handleRemove(product: Product): void {
+    this.cartService.removeFromCart(product);
   }
 
   ngOnInit(): void {
     this.title.setTitle('Checkout');
-    this.cartSub = this.cartService.products.subscribe((response) => {
-      this.logger.debug('Response from cart service:', response);
-      this.products = response;
-      this.cartProducts = (
-        Object.values(
-          response.reduce((a, c) => Object.assign(a, { [c.id]: c }), {}),
-        ) as Product[]
-      ).map((product) => ({ amount: this.countProducts(product.id), product }));
-      this.logger.debug('Cart products after mapping:', this.cartProducts);
+    this.cartSub = this.cartService.cartItems.subscribe((cartItems) => {
+      this.logger.debug('Cart items from cart service:', cartItems);
+      this.cartItems.next(cartItems);
     });
   }
 

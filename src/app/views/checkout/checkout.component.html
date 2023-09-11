@@ -1,7 +1,31 @@
-<h2 class="page-heading" i18n="checkout">Checkout</h2>
-
-<pre
-  class="bg-gray-100 border-gray-400 overflow-x-auto rounded-md shadow-md"
-><code>
-  {{ cartProductsToString() }}
-</code></pre>
+<article itemscope itemtype="CheckoutPage">
+  <h2 class="page-heading" i18n="checkout">Checkout</h2>
+  <details open *ngIf="cartItems.value.length; else elseBlock">
+    <summary class="sub-heading list-none pointer-events-none" tabindex="-1">
+      Summary
+    </summary>
+    <div class="separator mt-6"></div>
+    <app-checkout-cart-item
+      [cartItem]="cartItem"
+      (amountChange)="handleAmountChange($event.product, $event.amount)"
+      (removeItem)="handleRemove($event)"
+      *ngFor="let cartItem of cartItems.value"
+    />
+    <div class="separator mt-8"></div>
+    <dl class="flex items-center space-x-4 w-full">
+      <dt class="font-bold text-2xl">Total</dt>
+      <dd>
+        <data
+          class="whitespace-nowrap"
+          [value]="calculateTotals(cartItems.value) | number"
+          >{{ calculateTotals(cartItems.value) | currency }}</data
+        >
+      </dd>
+    </dl>
+  </details>
+  <ng-template #elseBlock>
+    <p i18n="no-products-in-cart">
+      No products found in cart. <a routerLink="/products">Add some?</a>
+    </p>
+  </ng-template>
+</article>

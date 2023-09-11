@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  a:not(.button) {
+    @apply hover:underline;
+    @apply text-sky-600;
+  }
+}
+
 @layer components {
   .button {
     @apply bg-gray-900 hover:bg-gray-800;
@@ -13,11 +20,34 @@
     @apply transition;
   }
 
+  .sub-heading {
+    @apply my-4;
+    @apply text-2xl;
+    @apply text-center sm:text-left;
+    @apply uppercase;
+    @apply tracking-widest;
+    @apply w-full;
+  }
+
   .page-heading {
     @apply font-bold;
     @apply my-4;
     @apply text-4xl;
     @apply text-center sm:text-left;
     @apply w-full;
+  }
+
+  .select {
+    @apply bg-white;
+    @apply border-1 border-gray-400;
+    @apply p-2 pl-3;
+    @apply rounded-md;
+    @apply shadow-sm;
+    @apply transition;
+  }
+
+  .separator {
+    @apply border-t border-gray-200;
+    @apply p-4 pb-2;
   }
 }
