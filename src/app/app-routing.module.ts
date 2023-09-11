@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { CheckoutComponent } from '@views/checkout/checkout.component';
-import { ProductListComponent } from '@views/product-list/product-list.component';
-import { ProductComponent } from '@views/product/product.component';
+import {
+  CheckoutComponent,
+  ProductComponent,
+  ProductListComponent,
+} from '@views';
 
 export const routes: Routes = [
   { path: '', redirectTo: 'products', pathMatch: 'full' },

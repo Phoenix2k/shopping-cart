@@ -3,8 +3,7 @@ import { Title } from '@angular/platform-browser';
 import { type Subscription } from 'rxjs';
 
 import { type Product } from '@schemas';
-import { ApiService } from '@services/api/api.service';
-import { LoggerService } from '@services/logger/logger.service';
+import { ApiService, LoggerService } from '@services';
 import Utils from '@utils';
 
 @Component({
@@ -33,7 +32,7 @@ export class ProductListComponent implements OnDestroy, OnInit {
       this.logger.debug('Response from API:', response);
       this.logger.info(
         response?.products?.length
-          ? 'Product received successfully.'
+          ? 'Products received successfully.'
           : 'No products found.',
       );
       this.products = response.products;
