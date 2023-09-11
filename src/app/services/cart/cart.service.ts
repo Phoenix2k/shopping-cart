@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 
-import { ProductSchema, type Product } from '@schemas';
-import { LoggerService } from '@services/logger/logger.service';
-import { SessionStorageService } from '@services/session-storage/session-storage.service';
+import { CartItemsSchema, type CartItem, type Product } from '@schemas';
+import { LoggerService, SessionStorageService } from '@services';
 
+/** Key used to store cart in sessionStorage. */
 const KEY_CART_SERVICE = 'cart';
 
 @Injectable({
   providedIn: 'root',
 })
 export class CartService {
-  private _products = new BehaviorSubject<Product[]>([]);
-
-  public products = this._products.asObservable();
+  private cartItems$ = new BehaviorSubject<CartItem[]>([]);
+  public cartItems = this.cartItems$.asObservable();
 
   constructor(
     private logger: LoggerService,
@@ -21,15 +20,15 @@ export class CartService {
   ) {
     try {
       this.logger.log('Attempting to restore cart from sessionStorage…');
-      const previousCart: Product[] = JSON.parse(
+      const previousCart: CartItem[] = JSON.parse(
         this.sessionStorage.getItem(KEY_CART_SERVICE) ?? '[]',
       );
-      if (ProductSchema.array().safeParse(previousCart).success) {
-        this._products.next(ProductSchema.array().parse(previousCart));
+      if (CartItemsSchema.safeParse(previousCart).success) {
+        this.cartItems$.next(CartItemsSchema.parse(previousCart));
       }
-      this.logger.debug('Previous products:', this._products.value);
+      this.logger.debug('Previous products:', this.cartItems$.value);
       this.logger.info(
-        this._products.value.length
+        this.cartItems$.value.length
           ? 'Cart restored successfully.'
           : 'No previous cart detected.',
       );
@@ -40,31 +39,52 @@ export class CartService {
     }
   }
 
-  public addToCart(product: Product): void {
+  public addProductToCart(product?: Product | null): void {
+    if (!product) return;
+    const existingAmount =
+      this.cartItems$.value.find((c) => c.product.id === product.id)?.amount ??
+      0;
     try {
-      const parsedProduct = ProductSchema.parse(product);
-      this.logger.debug('Adding product to cart:', parsedProduct);
-      this._products.next([...this._products.value, parsedProduct]);
+      this.updateAmount(product, existingAmount + 1);
     } catch (error) {
       this.logger.error('Unable to add product to cart:', product);
       this.logger.error(error);
     }
-    this.saveCart();
   }
 
   public removeFromCart(product: Product): void {
-    this._products.next(
-      this._products.value.filter((p) => p.id !== product.id),
+    this.logger.info('Removing all products from cart:', product);
+    this.cartItems$.next(
+      this.cartItems$.value.filter((c) => c.product.id !== product.id),
     );
-    this.saveCart();
   }
 
   public resetCart(): void {
     this.sessionStorage.removeItem(KEY_CART_SERVICE);
-    this._products.next([]);
+    this.cartItems$.next([]);
   }
 
   public saveCart(): void {
-    this.sessionStorage.setItem(KEY_CART_SERVICE, this._products.value);
+    this.sessionStorage.setItem(KEY_CART_SERVICE, this.cartItems$.value);
+  }
+
+  public updateAmount(product: Product, amount: number): void {
+    if (0 === amount) return this.removeFromCart(product);
+    const existingIndex = this.cartItems$.value.findIndex(
+      (c) => c.product.id === product.id,
+    );
+    if (-1 === existingIndex) {
+      this.logger.debug('Adding product to cart:', product);
+      this.cartItems$.next([
+        ...(this.cartItems$.value ?? []),
+        { amount: 1, product },
+      ]);
+    } else {
+      this.logger.debug('Updating product amount in cart:', product);
+      const updatedCartItems = [...(this.cartItems$.value ?? [])];
+      updatedCartItems[existingIndex].amount = amount;
+      this.cartItems$.next(updatedCartItems);
+    }
+    this.saveCart();
   }
 }
